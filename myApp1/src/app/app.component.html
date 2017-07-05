@@ -1,5 +1,7 @@
 <!--The whole content below can be removed with the new code.-->
 <div style="text-align:center">
+  {{title}}
+  <app-hello></app-hello>
   <h1>
     Welcome to {{title}}!!
   </h1>
@@ -17,4 +19,15 @@
     <h2><a target="_blank" href="http://angularjs.blogspot.ca/">Angular blog</a></h2>
   </li>
 </ul>
+<div>
+
+  <h1>
+    Angular2 CLI (Event)
+  </h1>
+
+  name : <input type="text" #txt (keyup.enter)="ChangeText(txt)">
+    {{textValue.value}}
+  <button (click)="ClickMe(txt)">Click</button>
+
+</div>
 
