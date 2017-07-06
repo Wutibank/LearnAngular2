@@ -10,6 +10,7 @@ export class ProductComponent implements OnInit {
 params : string;
   constructor(private route : ActivatedRoute) { 
     this.params = route.snapshot.params['id'];
+    
 
   }
 
