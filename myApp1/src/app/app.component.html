@@ -30,4 +30,31 @@
   <button (click)="ClickMe(txt)">Click</button>
 
 </div>
+<div>
+  <h3>Two way Data Binding</h3>
+  <input type="text" [(ngModel)]="title">
+  <p>{{title}}</p>
+</div>
+
+<div>
+<h1>Properties Binding One/Two</h1>
+{{person[0].id}}
+<br>
+ID : <input type="text" value="{{person[0].id}}"><br>
+ID : <input type="text" [value]="person[0].id"><br>
+ID : <input type="text" [(ngModel)]="person[0].id">
+{{person[0].id}}
+
+</div>
+<div>
+<h1>Router & RouterParams
+</h1>
+<nav>
+  <a routerLink = "product">Product</a>
+  <a routerLink = "contact">Contact</a>
+  </nav>
+
+</div>
+
+<router-outlet></router-outlet>
 

@@ -8,7 +8,18 @@ import {HelloComponent} from './hello/hello.component';
 })
 export class AppComponent {
   title = 'appComponent Started';
+  datame = 'DataData';
   textValue = '';
+
+  person : any;
+  constructor(){
+    this.person = [
+      {id : 123,name : 'wuti'}
+    ]
+
+    console.log(this.person);
+  }
+
 
   ClickMe(txt){
     console.log("Clicked"+txt.value);
