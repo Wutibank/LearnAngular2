@@ -1,10 +1,14 @@
 import { Component } from '@angular/core';
 import {HelloComponent} from './hello/hello.component';
+import {ProductService} from "./services/product.service";
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  providers : [ProductService]
+
+
 })
 export class AppComponent {
   title = 'appComponent Started';
@@ -12,12 +16,18 @@ export class AppComponent {
   textValue = '';
 
   person : any;
-  constructor(){
+
+getdataProduct : string;
+
+
+
+  constructor(private _productservice : ProductService){
     this.person = [
       {id : 123,name : 'wuti'}
     ]
-
     console.log(this.person);
+
+    this.getProduct();
   }
 
 
@@ -26,5 +36,13 @@ export class AppComponent {
   }
   ChangeText(txt){
     this.textValue= txt;
+  }
+
+  getProduct(){
+    this._productservice.getProduct().subscribe(
+      (data) => this.getdataProduct = data,
+      (error) => alert(error),
+      () => console.log("async completed!")
+    );
   }
 }

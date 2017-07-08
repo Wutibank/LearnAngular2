@@ -60,3 +60,10 @@ ID : <input type="text" [(ngModel)]="person[0].id">
 
 <router-outlet></router-outlet>
 
+<div>
+  <ol>
+<li *ngFor="let pro of getdataProduct">{{pro.id}}</li>
+    </ol>
+
+{{getdataProduct | json}}
+  </div>
